@@ -1,0 +1,55 @@
+<div class="parallax-container">
+    <div class="row">
+        <div class="col s2"></div>
+        <div class="col s12 m8 l8">
+            <div class="card card-registro">
+                <div class="card-content">
+                    <h6>INFORMACIÓN REGISTRO</h6>
+                    <form [formGroup]="registroValidator.registroNuevoForm" (ngSubmit)="registrarUsuario()">
+                        <div class="row">
+                            <div class="input-field col s12 m6 l6">
+                                <input type="text" class="validate" data-length="60" maxlength="60" id="nombres"
+                                    name="nombres" placeholder="" formControlName="nombres" required>
+                                <label for="nombres">Nombres:</label>
+                                <span class="helper-text" data-error="" data-success="" id="nombres-help" [hidden]="registroValidator.existenErrores('nombres')"></span>
+                            </div>
+                        <div class="input-field col s12 m6 l6">
+                            <input type="text" class="validate" data-length="60" maxlength="60" id="apellidos"
+                                name="apellidos" placeholder="" required="" aria-required="true"
+                                formControlName="apellidos">
+                            <label for="apellidos">Apellidos:</label>
+                            <span class="helper-text" data-error="Apellidos requeridos" data-success=""></span>
+                        </div>
+                        <div class="input-field col s12 m7 l7">
+                            <input type="email" class="validate" data-length="50" id="correo" name="correo"
+                                formControlName="correo" placeholder="" required=""
+                                aria-required="true">
+                            <label for="correo">Correo:</label>
+                            <span class="helper-text" data-error="Correo invalido" data-success=""></span>
+                        </div>
+                        <div class="input-field col s12 m5 l5">
+                            <input type="password" class="validate" data-length="50" id="clave" name="clave" maxlength="20" minlength="8"
+                                formControlName="clave" placeholder="" required="" aria-required="true">
+                            <label for="clave">Contraseña:</label>
+                            <!-- <span class="helper-text" data-error="Contaseña invalida" data-success=""></span> -->
+                            <span class="helper-text" data-error="" data-success="" id="clave-help" [hidden]="registroValidator.existenErrores('clave')"></span>
+                        </div>
+                        <div class="input-field col s12 right">
+                            <button type="submit" class="btn col s12"
+                                [disabled]="!registroValidator.registroNuevoForm.valid">Registrarse</button>
+                        </div>
+                </div>
+
+                </form>
+                <div class="center-align">
+                    <a class="">¿Olvidaste tu contraseña?</a>
+                </div>
+                <a href="/" class="">VOLVER</a>
+            </div>
+        </div>
+        <div class="parallax"><img height="100dv" src="../../../../assets/images/money2-bg.jpg"
+            alt="Unsplashed background img 1"></div>
+    </div>
+    <div class="col s2"></div>
+</div>
+</div>
